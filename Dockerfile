@@ -12,6 +12,7 @@ RUN npm run build
 
 # Run phase; Copy production assets and run the nginx server
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 
